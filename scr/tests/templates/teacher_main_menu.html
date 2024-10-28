@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Основная таблица</title>
+</head>
+<body>
+    <h1>Ты учитель</h1>
+    <hr>
+
+    <h2>Таблица сабмитов</h2>
+    <table border="1">
+        <tr>
+            <th>ID Submissions</th>
+            <th>Student ID</th>
+            <th>Task ID</th>
+        </tr>
+        {% for submission in submissions %}
+        <tr>
+            <td>{{ submission[0] }}</td>
+            <td>{{ submission[1] }}</td>
+            <td>{{ submission[2] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>История сабмитов</h2>
+    <table border="1">
+        <tr>
+            <th>Файл</th>
+            <th>Комментарий</th>
+            <th>Скачать</th>
+        </tr>
+        {% for file, comment in history %}
+        <tr>
+            <td>{{ file }}</td>
+            <td>{{ comment }}</td>
+            <td><button onclick="alert('Выгрузка файла: {{ file }}')">Выгрузить файл</button></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Отправить комментарий</h2>
+    <form method="POST">
+        {{ comment_form.hidden_tag() }}
+        {{ comment_form.file_name.label }}<br>
+        {{ comment_form.file_name(size=32) }}<br>
+        {{ comment_form.comment.label }}<br>
+        {{ comment_form.comment(rows=4) }}<br>
+        {{ comment_form.submit() }}
+    </form>
+
+    <hr>
+<h2>Добавить задачу</h2>
+    <form method="POST">
+        {{ task_form.hidden_tag() }}
+        {{ task_form.task_name.label }}<br>
+        {{ task_form.task_name(size=32) }}<br>
+        {{ task_form.task_description.label }}<br>
+        {{ task_form.task_description(rows=4) }}<br>
+        {{ task_form.submit() }}
+    </form>
+
+    <hr>
+</body>
+</html>

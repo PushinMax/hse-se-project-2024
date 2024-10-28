@@ -23,6 +23,9 @@ class Repo:
     def get_task(self, id: int) -> Task:
         return self.tasks[id]
 
+    def get_submissions(self, submission_id) :
+        return self.submissions
+
     def get_submission(self, submission_id) -> Submission:
         return self.submission[submission_id]
 
