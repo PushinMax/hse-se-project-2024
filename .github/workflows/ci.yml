@@ -1,0 +1,27 @@
+name: Python Test
+
+on:
+  push:
+    branches:
+      - main  # Замените на вашу основную ветку, если это необходимо
+  pull_request:
+    branches:
+      - main  # Замените на вашу основную ветку, если это необходимо
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'  # Замените на вашу версию Python
+
+
+    - name: Run tests
+      run: |
+        python scr/tests/test.py
