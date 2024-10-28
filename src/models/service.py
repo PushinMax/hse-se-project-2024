@@ -1,5 +1,5 @@
 from typing import Optional
-from scr.repository.repo import *
+from src.repository.repo import *
 from entities import *
 
 class User_service:

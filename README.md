@@ -44,3 +44,7 @@
 4. Лицензия
 5. Доработан README
 
+![login.png](ScreenShots%2Flogin.png)
+![student_menu.png](ScreenShots%2Fstudent_menu.png)
+![teacher_menu_1.png](ScreenShots%2Fteacher_menu_1.png)
+![teacher_menu_2.png](ScreenShots%2Fteacher_menu_2.png)
